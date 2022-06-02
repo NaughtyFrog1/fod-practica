@@ -1,0 +1,228 @@
+1
+Juan
+Perez
+Una Calle
+1234
+4
+C
+La Plata
+123
+Foo
+Bar
+23456789
+John
+Doe
+12345678
+-1
+-
+-
+
+2
+Pedro
+Gonzalez
+Una Calle
+1234
+4
+C
+La Plata
+123
+Foo
+Bar
+23456789
+John
+Doe
+12345678
+321
+2020-05-27 12:45
+La Plata
+
+3
+Marcelo
+Mercado
+Una Calle
+1234
+4
+C
+San Martin
+123
+Foo
+Bar
+23456789
+John
+Doe
+12345678
+321
+2019-02-06 13:12
+Mar del Plata
+
+4
+Camilo
+Sesto
+Una Calle
+1234
+4
+C
+Mar del Plata
+123
+Foo
+Bar
+23456789
+John
+Doe
+12345678
+-1
+-
+-
+
+5
+Julia
+Gomez
+Una Calle
+1234
+4
+C
+La Plata
+123
+Foo
+Bar
+23456789
+John
+Doe
+12345678
+321
+2022-03-21 19:24
+San Martin
+
+6
+Adrian
+Costa
+Una Calle
+1234
+4
+C
+San Martin
+123
+Foo
+Bar
+23456789
+John
+Doe
+12345678
+321
+2021-07-12 16:42
+La Plata
+
+7
+Ana
+Carmen
+Una Calle
+1234
+4
+C
+San Martin
+123
+Foo
+Bar
+23456789
+John
+Doe
+12345678
+-1
+-
+-
+
+8
+Juana
+Miranda
+Una Calle
+1234
+4
+C
+La Plata
+123
+Foo
+Bar
+23456789
+John
+Doe
+12345678
+321
+2019-02-06 04:20
+La Plata
+
+9
+Thom
+Yorke
+Una Calle
+1234
+4
+C
+Mar del Plata
+123
+Foo
+Bar
+23456789
+John
+Doe
+12345678
+-1
+-
+-
+
+10
+Julian
+Casas
+Una Calle
+1234
+4
+C
+Mar del Plata
+123
+Foo
+Bar
+23456789
+John
+Doe
+12345678
+321
+2019-02-06 13:12
+Mar del Plata
+
+11
+Andres
+Koller
+Una Calle
+1234
+4
+C
+Mar del Plata
+123
+Foo
+Bar
+23456789
+John
+Doe
+12345678
+321
+2019-02-06 13:12
+Mar del Plata
+
+12
+Micaela
+Jose
+Una Calle
+1234
+4
+C
+La Plata
+123
+Foo
+Bar
+23456789
+John
+Doe
+12345678
+321
+2019-02-06 13:12
+San Martin
+
