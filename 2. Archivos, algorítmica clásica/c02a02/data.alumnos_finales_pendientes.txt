@@ -1,0 +1,15 @@
+1
+Ramirez
+16
+8
+
+2
+Gonzalez
+20
+8
+
+5
+Sanchez
+8
+4
+

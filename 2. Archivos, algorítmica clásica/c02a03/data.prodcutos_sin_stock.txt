@@ -1,0 +1,15 @@
+Producto 1
+Esto es una descripción del producto 1
+7
+10.00
+
+Producto 2
+Esto es una descripción del producto 2
+9
+20.00
+
+Producto 3
+Esto es una descripción del producto 3
+8
+30.00
+
