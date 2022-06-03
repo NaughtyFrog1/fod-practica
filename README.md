@@ -201,3 +201,9 @@ CorteDeControl(archivo) {
 }
 ```
 - Como los identificadores pueden estar repetidos entre las sucursales, ciudades y provincias; tenemos que ir "pasando" las condiciones a todos los cortes de control.
+
+
+
+
+
+# Bajas
