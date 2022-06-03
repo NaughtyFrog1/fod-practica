@@ -39,7 +39,7 @@ type
   VRegsDetalles =              array[RDetalles] of TDetalle;
 
 
-//* OPERACIONES BÀSICAS PARA VDETALLES
+//* OPERACIONES BÁSICAS PARA VDETALLES
 
 procedure assignDetalles(var v: VDetalles; path: String);
 var i: RDetalles;
