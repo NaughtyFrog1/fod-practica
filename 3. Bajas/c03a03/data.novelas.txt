@@ -1,0 +1,60 @@
+0
+
+
+0
+
+1
+Brooklyn Nine-Nine
+Sitcom
+8
+
+6
+The Sopranos
+Mafia
+6
+
+18
+Los simuladores
+Ficcion
+2
+
+7
+Arcane
+Fantasia
+1
+
+3
+The Office
+Sitcom
+9
+
+8
+Okupas
+Realidad
+1
+
+4
+Community
+Sitcom
+6
+
+9
+El reino
+Politica
+1
+
+12
+The Boys
+Humor
+3
+
+10
+Breaking Bad
+Drama
+5
+
+15
+Mr. Robot
+Drama
+4
+
