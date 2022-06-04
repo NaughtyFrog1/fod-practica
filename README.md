@@ -207,3 +207,93 @@ CorteDeControl(archivo) {
 
 
 # Bajas
+
+- **Baja física:** reemplazar el elemento del archivo por otro, decrementando la cantidad de elementos y recuperando espacio físico.
+- **Baja lógica:** marcar un elemento como borrado, sigue ocupando espacio en el archivo.
+
+## Archivos de longitud fija
+
+
+### Baja física
+
+#### Sin mantener el orden
+
+```
+bajaFisica(archivo, elemento) {
+  Reset(archivo);
+
+  Buscar el elemento a eliminar;
+  Guardar la posición del elemento;
+  Leer el último elemento del archivo;
+  Escribir el último elemento del archivo en la posición guardada;
+  Volver al último elemento del archivo;
+
+  Truncate(archivo);
+}
+```
+- `Truncate` pone una marca de EOF en la posición del puntero del archivo.
+
+#### Manteniendo el orden
+
+```
+bajaFisica(archivo, id) {
+  Reset(archivo);
+
+  // Avanzar hasta encontrar el elemento a eliminar
+  leer(archivo, t);
+  while (t.id <> id) leer(archivo, t);
+
+  // Leer el registro siguiente
+  leer(archivo, t);
+
+  // Desplazar todos los registros hacia la izquierda
+  while (t.id <> VALOR_CORTE) {
+    Seek(archivo, FilePos(archivo) - 2);  // Volvemos a la posición del registro a eliminar
+    Write(archivo, t);
+    Seek(archivo, FilePos(archivo) + 1);
+    leer(archivo, t);
+  }
+
+  Truncate(archivo);
+}
+```
+
+
+### Baja lógica
+
+Se crea una **lista encadenada invertida** con los registros dados de baja. El primer registro del archivo se utiliza como un **registro de cabecera**.
+
+- Bajas 
+  - El registro de cabecera guarda el NRR del último registro borrado, o 0 si no hay registros borrados.
+  - Al borrar un registro se guarda su NRR en el registro de cabecera y el que estaba allí se guarda en el registro borrado (generando la lista encadenada invertida).
+- Altas
+  - Los elementos se insertan el el NRR indicado por el registro de cabecera y este se actualiza con el NRR al que apuntaba el otro registro
+  - Si el registro de cabecera es 0, no hay lugares disponibles, se inserta al final del archivo.
+
+```
+NRR:            0    1    2    3    4    5    6    7    8    9   10  
+
+             |  0 |  1 |  6 |  2 |  7 |  3 |  8 |  4 |  9 |  5 | 10 |
+                ^
+
+BORRAR 2:    | -3 |  1 |  6 |  0 |  7 |  3 |  8 |  4 |  9 |  5 | 10 |
+                ^              ^
+
+BORRAR 8:    | -6 |  1 |  6 |  0 |  7 |  3 | -3 |  4 |  9 |  5 | 10 |
+                ^              ^              ^
+
+BORRAR 6:    | -2 |  1 | -6 |  0 |  7 |  3 | -3 |  4 |  9 |  5 | 10 |
+                ^         ^    ^              ^
+
+INSERTAR 21: | -6 |  1 | 21 |  0 |  7 |  3 | -3 |  4 |  9 |  5 | 10 |
+                ^         ·    ^              ^
+
+INSERTAR 32: | -3 |  1 | 21 |  0 |  7 |  3 | 32 |  4 |  9 |  5 | 10 |
+                ^         ·    ^              ·
+
+INSERTAR 15: |  0 |  1 | 21 | 15 |  7 |  3 | 32 |  4 |  9 |  5 | 10 |
+                ^         ·    ^              ·
+```
+
+Después de insertar el 15, el registro de cabecera vuelve a quedar en 0, si se quisieran insertar nuevos elemetnos habrá que hacerlo al final del archivo.
+
