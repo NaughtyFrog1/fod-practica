@@ -235,7 +235,7 @@ CorteDeControl(archivo) {
 Truncate(f);
 ```
 
-Trunca `f` en la posición actual del puntero del archivo y lo cierra.
+Trunca `f` en la posición actual del puntero del archivo.
 
 El archivo tiene que estar abierto
 

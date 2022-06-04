@@ -245,6 +245,7 @@ begin
 
     Seek(f, FileSize(f) - 1);
     Truncate(f);
+    Close(f);
   end;
 end;
 
