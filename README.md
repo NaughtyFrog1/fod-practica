@@ -2,9 +2,11 @@
 
 
 
+
 ## Actualización
 
 Se actualiza un archivo maestro a partir de un conjunto de archivos detalles.
+
 
 
 ### Un maestro, un detalle. Sin repetición
@@ -31,6 +33,8 @@ actualizarMaestro(maestro, detalle) {
   Close(maestro); Close(detalle);
 }
 ```
+
+
 
 ### Un maestro, un detalle. Con repetición
 
@@ -63,6 +67,9 @@ actualizarMaestro(maestro, detalle) {
   Close(maestro); Close(detalle);
 }
 ```
+
+
+
 
 ### Un Maestro, *N* detalles. Con repetición
 
@@ -114,9 +121,11 @@ actualizarMaestro(maestro, detalles) {
 
 
 
+
 ## Merge
 
 Se genera un nuevo archivo maestro a partir de la información distribuida en varios archivos detalles.
+
 
 
 ### Merge N archivos. Sin repetición
@@ -136,6 +145,7 @@ mergeSinRepeticion(maestro, detalles) {
   Close(maestro); Close(detalles);
 }
 ```
+
 
 
 ### Merge N archivos. Con repetición
@@ -159,6 +169,7 @@ mergeConRepeticion(maestro, detalles) {
   Close(maestro); Close(detalles);
 }
 ```
+
 
 
 
@@ -211,10 +222,54 @@ CorteDeControl(archivo) {
 - **Baja física:** reemplazar el elemento del archivo por otro, decrementando la cantidad de elementos y recuperando espacio físico.
 - **Baja lógica:** marcar un elemento como borrado, sigue ocupando espacio en el archivo.
 
+
+
+
+## Procedimientos
+
+
+
+### Truncate
+
+```
+Truncate(f);
+```
+
+Trunca `f` en la posición actual del puntero del archivo y lo cierra.
+
+El archivo tiene que estar abierto
+
+
+
+### Rename
+
+```
+Rename(f, nuevoNombre);
+```
+Cambia el nombre asignado al archivo `f` por `nuevoNombre`.
+
+El archivo tiene que estar asignado y cerrado.
+
+
+
+### Erase
+
+```
+Erase(f);
+```
+Elimina `f` del disco.
+
+El archivo tiene que estar asignado y cerrado.
+
+
+
+
 ## Archivos de longitud fija
 
 
+
 ### Baja física
+
 
 #### Sin mantener el orden
 
@@ -232,6 +287,7 @@ bajaFisica(archivo, elemento) {
 }
 ```
 - `Truncate` pone una marca de EOF en la posición del puntero del archivo.
+
 
 #### Manteniendo el orden
 
@@ -257,6 +313,7 @@ bajaFisica(archivo, id) {
   Truncate(archivo);
 }
 ```
+
 
 
 ### Baja lógica
@@ -292,8 +349,7 @@ INSERTAR 32: | -3 |  1 | 21 |  0 |  7 |  3 | 32 |  4 |  9 |  5 | 10 |
                 ^         ·    ^              ·
 
 INSERTAR 15: |  0 |  1 | 21 | 15 |  7 |  3 | 32 |  4 |  9 |  5 | 10 |
-                ^         ·    ^              ·
+                ^         ·    ·              ·
 ```
 
 Después de insertar el 15, el registro de cabecera vuelve a quedar en 0, si se quisieran insertar nuevos elemetnos habrá que hacerlo al final del archivo.
-
